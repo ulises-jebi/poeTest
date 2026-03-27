@@ -507,7 +507,7 @@ def cmd_power():
 
 def cmd_system():
     snmp, web = connect()
-    header("Informacion del Sistema")
+    header("Informacion del Sistemassssssssss")
     show_dict(snmp.get_system_info())
     poe_data = web.fetch_poe_data()
     if poe_data:
