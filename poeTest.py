@@ -460,7 +460,7 @@ def cmd_ports():
     _, web = connect()
     poe_data = web.fetch_poe_data()
     if poe_data:
-        header("Puertos PoE - Detalle completo")
+        header("Puertos PoE - Detalle completos")
         show_port_table(poe_data["ports"], compact=False)
 
 
