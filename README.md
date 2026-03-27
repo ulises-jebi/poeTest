@@ -55,7 +55,7 @@ poeTest -r status
 # Lectura
 poeTest -r status              # Resumen rápido
 poeTest -r ports               # Tabla detallada de puertos
-poeTest -r Port3               # Detalle del puerto 3
+poeTest -r port3               # Detalle del puerto 3
 poeTest -r power               # Datos de potencia
 poeTest -r system              # Info del sistema
 poeTest -r watch,5             # Monitor en vivo cada 5s
@@ -63,11 +63,11 @@ poeTest -r csv                 # Exportar snapshot a CSV
 poeTest -r log                 # Agregar línea al log continuo
 
 # Escritura
-poeTest -w Port3,1             # Habilitar puerto 3
-poeTest -w Port3,0             # Deshabilitar puerto 3
-poeTest -w Port3,r             # Reiniciar puerto 3 (off/on 5s)
-poeTest -w Port3,r,10          # Reiniciar con espera de 10s
-poeTest -w Port1,1 Port5,0    # Múltiples puertos a la vez
+poeTest -w port3,1             # Habilitar puerto 3
+poeTest -w port3,0             # Deshabilitar puerto 3
+poeTest -w port3,r             # Reiniciar puerto 3 (off/on 5s)
+poeTest -w port3,r,10          # Reiniciar con espera de 10s
+poeTest -w port1,1 port5,0    # Múltiples puertos a la vez
 
 # Ayuda
 poeTest help

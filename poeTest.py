@@ -614,7 +614,7 @@ def cmd_help():
     print("  LECTURA (-r):")
     print("    poeTest -r status              Resumen rapido")
     print("    poeTest -r ports               Tabla detallada de puertos")
-    print("    poeTest -r Port3               Detalle del puerto 3")
+    print("    poeTest -r port3               Detalle del puerto 3")
     print("    poeTest -r power               Solo datos de potencia")
     print("    poeTest -r system              Info del sistema")
     print("    poeTest -r watch               Refresh cada 5 segundos")
@@ -623,16 +623,16 @@ def cmd_help():
     print("    poeTest -r log                 Agregar linea al log continuo")
     print("")
     print("  ESCRITURA (-w):")
-    print("    poeTest -w Port3,1             Habilitar puerto 3")
-    print("    poeTest -w Port3,0             Deshabilitar puerto 3")
-    print("    poeTest -w Port3,r             Reiniciar puerto 3 (off/on 5s)")
-    print("    poeTest -w Port3,r,10          Reiniciar puerto 3, espera 10s")
-    print("    poeTest -w Port1,1 Port5,0     Multiples puertos a la vez")
-    print("    poeTest -w Port1,r Port2,r     Reiniciar multiples puertos")
+    print("    poeTest -w port3,1             Habilitar puerto 3")
+    print("    poeTest -w port3,0             Deshabilitar puerto 3")
+    print("    poeTest -w port3,r             Reiniciar puerto 3 (off/on 5s)")
+    print("    poeTest -w port3,r,10          Reiniciar puerto 3, espera 10s")
+    print("    poeTest -w port1,1 port5,0     Multiples puertos a la vez")
+    print("    poeTest -w port1,r port2,r     Reiniciar multiples puertos")
     print("")
     print("  FORMATO -w:")
-    print("    Port[1-8],[0|1|r]              0=disable, 1=enable, r=restart")
-    print("    Port[1-8],r,[seg]              restart con espera personalizada")
+    print("    port[1-8],[0|1|r]              0=disable, 1=enable, r=restart")
+    print("    port[1-8],r,[seg]              restart con espera personalizada")
     print("")
     print("  AYUDA:")
     print("    poeTest help")
@@ -640,9 +640,9 @@ def cmd_help():
     print("  EJEMPLOS:")
     print("    poeTest -r status")
     print("    poeTest -r watch,3")
-    print("    poeTest -w Port1,1")
-    print("    poeTest -w Port5,0 Port6,0")
-    print("    poeTest -w Port3,r,15")
+    print("    poeTest -w port1,1")
+    print("    poeTest -w port5,0 port6,0")
+    print("    poeTest -w port3,r,15")
     print("")
 
 
@@ -694,7 +694,7 @@ def main():
             return
         elif cmd not in read_cmds:
             print("  [ERROR] '" + cmd + "' no es un comando de lectura")
-            print("  Comandos -r: " + ", ".join(read_cmds) + ", Port[1-8], watch[,seg]")
+            print("  Comandos -r: " + ", ".join(read_cmds) + ", port[1-8], watch[,seg]")
             return
 
         if cmd == "status":
@@ -715,8 +715,8 @@ def main():
 
         if not args:
             print("  [ERROR] Falta el parametro de puerto")
-            print("  Formato: poeTest -w Port[1-8],[0|1|r]")
-            print("  Ejemplo: poeTest -w Port3,1")
+            print("  Formato: poeTest -w port[1-8],[0|1|r]")
+            print("  Ejemplo: poeTest -w port3,1")
             return
 
         _, web = connect()
@@ -727,7 +727,7 @@ def main():
 
             if not match:
                 print("  [ERROR] Formato invalido: '" + arg + "'")
-                print("  Formato: Port[1-8],[0|1|r]  Ejemplo: Port3,1")
+                print("  Formato: port[1-8],[0|1|r]  Ejemplo: port3,1")
                 return
 
             port_num = int(match.group(1))
