@@ -460,7 +460,7 @@ def cmd_ports():
     _, web = connect()
     poe_data = web.fetch_poe_data()
     if poe_data:
-        header("Puertos PoE - Detalle completos")
+        header("Puertos PoE - Detalle completo")
         show_port_table(poe_data["ports"], compact=False)
 
 
@@ -507,7 +507,7 @@ def cmd_power():
 
 def cmd_system():
     snmp, web = connect()
-    header("Informacion del Sistemassssssssss")
+    header("Informacion del Sistema")
     show_dict(snmp.get_system_info())
     poe_data = web.fetch_poe_data()
     if poe_data:
