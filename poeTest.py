@@ -26,7 +26,7 @@ from datetime import datetime, timedelta
 
 
 SWITCH_CONFIG = {
-    "host":       "192.168.1.90",
+    "host":       "192.168.1.103",
     "snmp_port":  161,
     "community":  "public",
     "timeout":    5,
